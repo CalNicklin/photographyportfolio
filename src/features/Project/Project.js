@@ -15,7 +15,7 @@ export default function Project () {
             <p>{project.intro}</p>
             {project.photos.map((photo, index) => {
                     return (
-                        <img key={index} src={photo} />
+                        <img key={index} src={photo.src} alt={photo.alt} />
                     )
                 })
             }
