@@ -8,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Local font imports */
 @font-face {
   font-family: AktivGrotesk-Regular;
   src: local('AktivGrotesk-Regular'), url('./assets/fonts/AktivGrotesk-Regular.otf') format('opentype');
