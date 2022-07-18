@@ -1,0 +1,50 @@
+.ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 50px 0;
+    padding-left: 0;
+
+}
+
+.li {
+    width: 300px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.li img {
+    height: 300px;
+    margin: 0px;
+}
+
+.li a,
+:visited {
+    text-decoration: none;
+    color: inherit
+}
+
+h2 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+h3 {
+    font-weight: 200;
+    font-size: smaller;
+}
+
+.search {
+    text-align: right;
+}
+
+.search input {
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 5px 10px;
+    outline: none;
+    text-align: right;
+    font-family: ibm-plex-mono;
+}

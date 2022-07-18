@@ -1,7 +1,8 @@
 /* Sets overall width of page */
 #root {
-    width: 70%;
+    max-width: 1050px;
     margin: auto;
+    padding: 5px;
 }
 
 /* Header bar */
@@ -16,6 +17,7 @@
 .header h1 {
     font-family: AktivGrotesk-Bold, sans-serif;
     text-transform: uppercase;
+    text-decoration: none;
     font-size: 1.8rem;
     line-height: 0.8;
 }
@@ -46,7 +48,7 @@
 
 /* Contains project text + images */
 .projectContainer {
-    margin: 50px auto;
+    margin: 2rem auto;
 }
 
 /* Responsive image gallery */

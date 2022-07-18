@@ -1,0 +1,28 @@
+h1 {
+    font-family: AktivGrotesk-Thin;
+    text-align: start;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.intro {
+    font-family: ibm-plex-mono;
+    margin-top: 3.125rem;
+    margin-bottom: 3.75rem;
+    font-size: 1rem;
+}
+
+.date {
+    text-align: center;
+    margin: 0;
+    font-family: AktivGrotesk-Thin;
+}
+
+p {
+    font-family: ibm-plex-mono;
+    font-size: 0.8rem;
+    color: rgb(rgb(64, 64, 64))
+}

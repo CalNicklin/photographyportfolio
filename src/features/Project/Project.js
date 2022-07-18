@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { selectProjects } from '../Projects/projectsSlice';
 import { openModal, setSrc, setAlt } from '../Modal/modalSlice'; 
 import Modal from '../Modal/Modal.js';
+import styles from './Project.module.css';
 
 export default function Project () {
 
@@ -23,8 +24,10 @@ export default function Project () {
 
     return (
         <div className = 'projectContainer'>
-            <h2>{project.title}</h2>
-            <p>{project.intro}</p>
+            <h1 className={styles.h1}>{project.title}</h1>
+            <p className={styles.date}>{project.date}</p>
+            <p className={styles.intro}>{project.intro}</p>
+            <Modal />
             <div className = 'gallery'>
                 {project.photos.map((photo, index) => {
                         return (
@@ -39,7 +42,6 @@ export default function Project () {
                 }
             </div>
             {/* This instance of Modal will display based on a boolean operator in modal.js*/}
-            <Modal />
         </div>
     );
 };

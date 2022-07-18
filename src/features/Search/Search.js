@@ -1,29 +1,22 @@
 import React, { useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setQuery } from './searchSlice';
 
-const Search = () => {
+export default function Search () {
   const searchInputRef = useRef();
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const onSearchHandler = (e) => {
+  const onChangeHandler = (e) => {
     e.preventDefault();
-
-    const query = {
-      title: searchInputRef.current.value
-    }
-    const queryString = new URLSearchParams(query).toString();
-
-    navigate.push({ pathname: '/projects', search: queryString})
+    const query = e.target.value;
+    dispatch(setQuery(query));
   };
 
   return (
-    <form onSubmit={onSearchHandler} className="search-form">
-      <input type="text" className="search" ref={searchInputRef} />
-      <button type="submit" className="search-button">
-        🔎
-      </button>
+    <form>
+      <input type='text' ref={searchInputRef} onChange={onChangeHandler} placeholder='Search by keyword'/>
     </form>
-  );
+  )
 };
 
-export default Search;
+

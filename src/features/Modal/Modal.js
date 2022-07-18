@@ -16,7 +16,7 @@ export default function Modal () {
     const alt = useSelector(selectAlt);
 
 
-    const handleClick = (event) => {
+    const handleClick = () => {
         dispatch(closeModal());
     }
 
@@ -30,7 +30,7 @@ export default function Modal () {
                     <button className={styles.closeButton} onClick={handleClick}>Close</button>
                 </div>
         </div>
-    ) : <p>Click on any image to enlarge</p>
+    ) : ''
 }
 
 
