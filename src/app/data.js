@@ -25,7 +25,7 @@ export const PROJECTS = {
                 {src: '/images/further/further3.jpg', alt: 'Ariege horse riding girl'}, 
                 {src: '/images/further/further4.jpg', alt: 'Ariege horse riding girl'}, 
                 {src: '/images/further/further5.jpg', alt: 'Camille atop Mt. Fourcat'}, 
-                {src: '/images/further/further8.jpg', alt: 'Well-known fixed-gear rider, Chas Christenson'},
+                {src: '/images/further/further8.jpg', alt: 'Well-known fixed-gear rider, tattooed Chas Christenson'},
                 {src: '/images/further/further9.jpg', alt: 'Mayflys'},
                 {src: '/images/further/further10.jpg', alt: 'Camille and Mayflys'},
                 {src: '/images/further/further11.jpg', alt: 'Epic sight whrn Angus Young collapsed at the checkpoint, Fourcat'},

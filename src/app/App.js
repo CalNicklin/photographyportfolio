@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from '../features/Header/Header'; 
 import Projects from '../features/Projects/Projects';
 import Project from '../features/Project/Project';
+import Prints from '../features/Prints/Prints';
 import About from '../features/About/About';
 import Blog from '../features/Blog/Blog';
 import ContactForm from '../features/ContactForm/ContactForm';
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path='/projects/:title' element={<Project />} />
             <Route path='/projects' element={<Projects />} />
+            <Route path='/prints' element={<Prints />} />
             {/* <Route path='/about' element={<About />} /> */}
             {/* <Route path='/blog' element={<Blog />} /> */}
             {/* <Route path='/contact' element={<ContactForm />} /> */}

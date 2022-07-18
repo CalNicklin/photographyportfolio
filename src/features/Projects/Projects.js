@@ -28,7 +28,6 @@ export default function Projects () {
 
     const dispatch = useDispatch();
     const onClickHandler = (e) => {
-        
         dispatch(clearQuery());
     };
 

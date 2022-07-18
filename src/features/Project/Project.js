@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { selectProjects } from '../Projects/projectsSlice';
 import { openModal, setSrc, setAlt } from '../Modal/modalSlice'; 
+import { addPrint } from '../Prints/printsSlice';
 import Modal from '../Modal/Modal.js';
 import styles from './Project.module.css';
 
@@ -20,28 +21,35 @@ export default function Project () {
         dispatch(openModal());
         dispatch(setSrc(event.target.src));
         dispatch(setAlt(event.target.alt));
-    }
+    };
+
+    const addToPrints = (event) => {
+        dispatch(addPrint(event.target.value));
+    };
 
     return (
         <div className = 'projectContainer'>
             <h1 className={styles.h1}>{project.title}</h1>
             <p className={styles.date}>{project.date}</p>
             <p className={styles.intro}>{project.intro}</p>
+        {/* This instance of Modal will display based on a boolean operator in modal.js*/}
             <Modal />
             <div className = 'gallery'>
                 {project.photos.map((photo, index) => {
                         return (
+                            <div>
                                 <img id={`image${index}`} 
                                     key={index}
                                     src={photo.src}
                                     alt={photo.alt} 
                                     onClick={handleClick}
                                     />
+                                <button onClick={addToPrints} value={photo.src}>ADD TO PRINTS</button>
+                            </div>
                         )
                     })
                 }
             </div>
-            {/* This instance of Modal will display based on a boolean operator in modal.js*/}
         </div>
     );
 };
