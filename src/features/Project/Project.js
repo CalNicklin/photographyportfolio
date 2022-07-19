@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { selectProjects } from '../Projects/projectsSlice';
 import { openModal, setSrc, setAlt } from '../Modal/modalSlice'; 
-import { addPrint } from '../Prints/printsSlice';
+import { printsSlice, addPrint, selectPrints } from '../Prints/printsSlice';
 import Modal from '../Modal/Modal.js';
 import styles from './Project.module.css';
 
@@ -13,6 +13,7 @@ export default function Project () {
     const projects = useSelector(selectProjects);
     const { title } = useParams();
     const project = projects[title];
+    const prints = useSelector(selectPrints);
     const dispatch = useDispatch();
 
     const handleClick = (event) => {
@@ -24,7 +25,10 @@ export default function Project () {
     };
 
     const addToPrints = (event) => {
+        // Disallow adding to prints if image already present in prints request
+        if (!prints.includes(event.target.value)) {
         dispatch(addPrint(event.target.value));
+        }
     };
 
     return (
@@ -37,14 +41,13 @@ export default function Project () {
             <div className = 'gallery'>
                 {project.photos.map((photo, index) => {
                         return (
-                            <div>
+                            <div key={index}>
                                 <img id={`image${index}`} 
-                                    key={index}
                                     src={photo.src}
                                     alt={photo.alt} 
                                     onClick={handleClick}
-                                    />
-                                <button onClick={addToPrints} value={photo.src}>ADD TO PRINTS</button>
+                                />
+                                <button onClick={addToPrints} value={photo.src}>Request a print</button>
                             </div>
                         )
                     })

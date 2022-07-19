@@ -12,12 +12,15 @@ export default function Projects () {
     const searchTerm = useSelector(selectQuery);
     // Converts the projects object data into an array so .map works
     const projectsArray = Object.values(projects);
+    // projects are filtered based on a search term matching against title, intro or alt data fields held in data.js
+    // the search term and data fields are all .toUpperCase to make case insensitive
     const filteredProjects = projectsArray.filter(project => {
         let title = project.title.toUpperCase();
         let intro = project.intro.toUpperCase();
         let altText = project.photos.map(photo => {
             return photo.alt
         });
+        // alttext is originally an array of arrays within data.js, so .toString in order to match search term with entire array of images.
         let altTextString = altText.toString().toUpperCase()
         return (
             title.includes(searchTerm) ||
@@ -26,6 +29,7 @@ export default function Projects () {
         );
     });
 
+    // clears query state to that on returning to projects after searching, the full array is shown.
     const dispatch = useDispatch();
     const onClickHandler = (e) => {
         dispatch(clearQuery());
