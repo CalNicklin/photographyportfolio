@@ -6,7 +6,7 @@ import Modal from "../Modal/Modal";
 import { openModal, setSrc } from "../Modal/modalSlice";
 import { Link } from "react-router-dom";
 
-export default function Prints () {
+export default function Prints() {
 
     const prints = useSelector(selectPrints);
     const dispatch = useDispatch();
@@ -25,18 +25,21 @@ export default function Prints () {
     // use of ternary operator works because prints.length is an array with initial state of 0, which evaluates to falsy.
     return prints.length ? (
         <div>
-            <Modal />
-            {prints.map((print, index) => {
-                return(
-                    <div key={index}>
-                        <img 
-                            src={print} 
-                            onClick={handleClick}
-                        />
-                        <button onClick={removeFromPrints} value={print}>Remove this photo</button>
-                    </div>
-                )
-            })}
+            <div>
+                <Modal />
+                {prints.map((print, index) => {
+                    return (
+                        <div key={index}>
+                            <img
+                                src={print}
+                                onClick={handleClick}
+                            />
+                            <button onClick={removeFromPrints} value={print}>Remove this photo</button>
+                        </div>
+                    )
+                })}
+            </div>
+            <PrintRequest />
         </div>
     ) : <p>You can request prints of your favorite images within each <Link to='/projects'>project</Link> page.</p>
 }

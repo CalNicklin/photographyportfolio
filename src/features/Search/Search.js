@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { setQuery } from './searchSlice';
 
-export default function Search () {
+export default function Search() {
   const searchInputRef = useRef();
   const dispatch = useDispatch();
 
@@ -14,7 +14,7 @@ export default function Search () {
 
   return (
     <form>
-      <input type='text' ref={searchInputRef} onChange={onChangeHandler} placeholder='Search by keyword'/>
+      <input type='text' ref={searchInputRef} onChange={onChangeHandler} placeholder='Search by keyword' />
     </form>
   )
 };

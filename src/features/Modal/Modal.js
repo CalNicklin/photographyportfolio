@@ -6,10 +6,10 @@ import { closeModal } from './modalSlice';
 import styles from './Modal.module.css';
 
 
-export default function Modal () {
+export default function Modal() {
 
     const dispatch = useDispatch();
-    
+
     // Accesses state properties of project within data.js via modalSlice and projectsSlice
     const isOpen = useSelector(selectIsOpen);
     const source = useSelector(selectSrc);
@@ -24,11 +24,11 @@ export default function Modal () {
     return isOpen ? (
         <div className={styles.modal}>
             {/* Overlay masks off background so only the modal is visible */}
-            <div className ={styles.overlay}></div>
-                <div className={styles.modal_content}>
-                    <img src={source} alt={alt}/>
-                    <button className={styles.closeButton} onClick={handleClick}>Close</button>
-                </div>
+            <div className={styles.overlay}></div>
+            <div className={styles.modal_content}>
+                <img src={source} alt={alt} />
+                <button className={styles.closeButton} onClick={handleClick}>Close</button>
+            </div>
         </div>
     ) : ''
 }

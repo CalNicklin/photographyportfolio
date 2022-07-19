@@ -6,7 +6,7 @@ import { selectQuery, clearQuery } from '../Search/searchSlice';
 import Search from '../Search/Search';
 import styles from './Projects.module.css';
 
-export default function Projects () {
+export default function Projects() {
 
     const projects = useSelector(selectProjects);
     const searchTerm = useSelector(selectQuery);

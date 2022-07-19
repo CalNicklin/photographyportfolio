@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectPrints } from '../Prints/printsSlice';
 
-export default function Header () {
+export default function Header() {
 
     const prints = useSelector(selectPrints).length;
 

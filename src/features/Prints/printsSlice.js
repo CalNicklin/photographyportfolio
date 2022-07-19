@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const printsSlice = createSlice ({
+export const printsSlice = createSlice({
     name: 'prints',
     initialState: [],
     reducers: {
