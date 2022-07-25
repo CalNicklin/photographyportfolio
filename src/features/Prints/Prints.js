@@ -5,6 +5,7 @@ import { selectPrints } from "./printsSlice";
 import Modal from "../Modal/Modal";
 import { openModal, setSrc } from "../Modal/modalSlice";
 import { Link } from "react-router-dom";
+import PrintRequestForm from "../PrintRequestForm/PrintRequestForm";
 
 export default function Prints() {
 
@@ -39,7 +40,7 @@ export default function Prints() {
                     )
                 })}
             </div>
-            <PrintRequest />
+            <PrintRequestForm />
         </div>
     ) : <p>You can request prints of your favorite images within each <Link to='/projects'>project</Link> page.</p>
 }
