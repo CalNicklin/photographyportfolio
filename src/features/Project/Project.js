@@ -3,9 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { selectProjects } from '../Projects/projectsSlice';
 import { openModal, setSrc, setAlt } from '../Modal/modalSlice';
-import { printsSlice, addPrint, selectPrints } from '../Prints/printsSlice';
+import { addPrint, selectPrints } from '../Prints/printsSlice';
 import Modal from '../Modal/Modal.js';
 import styles from './Project.module.css';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Project() {
 
@@ -15,6 +18,7 @@ export default function Project() {
     const project = projects[title];
     const prints = useSelector(selectPrints);
     const dispatch = useDispatch();
+    library.add(faPlus);
 
     const handleClick = (event) => {
         // This event triggers the modal to open and sets the image src and alt attritbutes to that of a specified file in data.js
@@ -50,13 +54,15 @@ export default function Project() {
                                 alt={photo.alt}
                                 onClick={handleClick}
                             />
-                            <button
+                            {/* <button
                                 className={styles.child}
                                 onClick={addToPrints}
                                 value={photo.src}
                             >
                                 Request a print
-                            </button>
+                            </button> */}
+                            <FontAwesomeIcon icon={faPlus} className={styles.faPlus} size='xl' onClick={addToPrints}
+                                value={photo.src} />
                         </div>
                     )
                 })

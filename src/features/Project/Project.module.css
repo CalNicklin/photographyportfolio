@@ -43,3 +43,17 @@ p {
     right: 0;
     margin: 5px;
 }
+
+.faPlus {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.faPlus:hover {
+    opacity: 0.6;
+    color: white;
+}
