@@ -41,13 +41,22 @@ export default function Project() {
             <div className='gallery'>
                 {project.photos.map((photo, index) => {
                     return (
-                        <div key={index}>
+                        <div 
+                            className={styles.parent} 
+                            key={index}
+                        >
                             <img id={`image${index}`}
                                 src={photo.src}
                                 alt={photo.alt}
                                 onClick={handleClick}
                             />
-                            <button onClick={addToPrints} value={photo.src}>Request a print</button>
+                            <button
+                                className={styles.child}
+                                onClick={addToPrints}
+                                value={photo.src}
+                            >
+                                Request a print
+                            </button>
                         </div>
                     )
                 })

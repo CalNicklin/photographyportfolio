@@ -26,3 +26,20 @@ p {
     font-size: 0.8rem;
     color: rgb(rgb(64, 64, 64))
 }
+
+.parent {
+    position: relative;
+    height: 200px;
+    margin: 10px;
+}
+
+.parent img {
+    margin: 0;
+}
+
+.child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+}
