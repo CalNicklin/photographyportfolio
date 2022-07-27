@@ -23,6 +23,10 @@
 }
 
 /* Nav elements */
+
+.homeBtn {
+    text-decoration: none;
+}
 .nav {
     display: inline-flex;
     align-items: center;
@@ -46,6 +50,13 @@
     color: inherit;
 }
 
+.banner {
+    display: block;
+    width: 75%;
+    height: auto;
+    margin: 50px auto;
+}
+
 /* Contains project text + images */
 .projectContainer {
     margin: 2rem auto;
@@ -67,8 +78,8 @@ img:hover {
 }
 
 button {
-    background-color: darkgray;
-    opacity: 0.5;
+    background-color: white;
+    opacity: 0.9;
     transition: 0.3s;
     border: none;
     color: black;
@@ -82,5 +93,6 @@ button {
 }
 
 button:hover {
-    opacity: 0.8;
+    background-color: gray;
+    opacity: 0.7;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectPrintSize, setPrintSize, setFulfilled, selectStatus, setRequest } from './printRequestFormSlice';
+import { selectPrintSize, setPrintSize, selectStatus, setRequest } from './printRequestFormSlice';
 import { selectPrints, resetPrint } from '../Prints/printsSlice';
 import { submitPrintRequest } from './printRequestFormSlice';
 import styles from './Form.module.css';
@@ -29,7 +29,6 @@ export default function PrintRequestForm() {
         e.preventDefault();
         dispatch(submitPrintRequest(request))
         dispatch(resetPrints());
-        // dispatch(setFulfilled());
         dispatch(setRequest(request));
     }
 

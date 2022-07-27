@@ -9,7 +9,7 @@ export default function Header() {
 
     return (
         <div className='header'>
-            <h1>C.Nicklin</h1>
+            <NavLink className='homeBtn' to='/'><h1>C.Nicklin</h1></NavLink>
             <div className='nav'>
                 <NavLink to='/projects'>Projects</NavLink>
                 <NavLink to='/about'>About</NavLink>

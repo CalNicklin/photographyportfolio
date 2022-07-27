@@ -4,6 +4,7 @@ import modalReducer from '../features/Modal/modalSlice';
 import searchReducer from '../features/Search/searchSlice';
 import printsReducer from '../features/Prints/printsSlice';
 import printRequestFormReducer from '../features/PrintRequestForm/printRequestFormSlice';
+import projectReducer from '../features/Project/projectSlice';
 
 export const store = configureStore({
   reducer: {
@@ -11,7 +12,8 @@ export const store = configureStore({
     modal: modalReducer,
     search: searchReducer,
     prints: printsReducer,
-    printRequestForm: printRequestFormReducer
+    printRequestForm: printRequestFormReducer,
+    project: projectReducer
   }
 });
 

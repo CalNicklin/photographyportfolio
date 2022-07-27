@@ -6,6 +6,7 @@ import { openModal, setSrc, setAlt } from '../Modal/modalSlice';
 import { addPrint, selectPrints } from '../Prints/printsSlice';
 import Modal from '../Modal/Modal.js';
 import styles from './Project.module.css';
+import { selectConfirmationIsOpen, confirm, reset } from './projectSlice';
 
 export default function Project() {
 
@@ -28,14 +29,35 @@ export default function Project() {
         // Disallow adding to prints if image already present in prints request
         if (!prints.includes(event.target.value)) {
             dispatch(addPrint(event.target.value));
+            dispatch(confirm());
+            resetConfirmation();
         }
+
     };
+
+    const resetConfirmation = async () => {
+        setTimeout(() => {
+          dispatch(reset())    
+        }, 1000)    
+      };
+
+    const confirmationModal = useSelector(selectConfirmationIsOpen);
+
+    const style = {
+        unconfirmed: { 
+            opacity: 1
+        },
+        confirmed: {
+            opacity: 0.5
+        }
+    }
 
     return (
         <div className='projectContainer'>
             <h1 className={styles.h1}>{project.title}</h1>
             <p className={styles.date}>{project.date}</p>
             <p className={styles.intro}>{project.intro}</p>
+            <p>Use the '+' selector to request a print. Click on image to enlarge.</p>
             {/* This instance of Modal will display based on a boolean operator in modal.js*/}
             <Modal />
             <div className='gallery'>
@@ -44,11 +66,12 @@ export default function Project() {
                         <div
                             className={styles.parent}
                             key={index}
-                        >
+                            >
                             <img id={`image${index}`}
                                 src={photo.src}
                                 alt={photo.alt}
                                 onClick={handleClick}
+                                style={confirmationModal ? style.confirmed : style.unconfirmed}
                             />
                             <button
                                 className={styles.child}

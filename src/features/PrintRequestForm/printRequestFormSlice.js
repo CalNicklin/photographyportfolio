@@ -11,7 +11,7 @@ export const submitPrintRequest = createAsyncThunk(
                 url: 'https://webhook.site/7f180eff-e14c-484b-849b-b8af6a8a4716',
                 data: request
             })
-                .then((response) => console.log(response.data))
+                .then((response) => console.log(response.data));
         }
         catch (err) {
             console.log(err)
