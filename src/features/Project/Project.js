@@ -6,9 +6,6 @@ import { openModal, setSrc, setAlt } from '../Modal/modalSlice';
 import { addPrint, selectPrints } from '../Prints/printsSlice';
 import Modal from '../Modal/Modal.js';
 import styles from './Project.module.css';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Project() {
 
@@ -18,7 +15,6 @@ export default function Project() {
     const project = projects[title];
     const prints = useSelector(selectPrints);
     const dispatch = useDispatch();
-    library.add(faPlus);
 
     const handleClick = (event) => {
         // This event triggers the modal to open and sets the image src and alt attritbutes to that of a specified file in data.js
@@ -59,7 +55,7 @@ export default function Project() {
                                 onClick={addToPrints}
                                 value={photo.src}
                             >
-                                Add to prints
+                                +
                             </button>
                         </div>
                     )

@@ -1,0 +1,21 @@
+.parent {
+    position: relative;
+    height: 200px;
+    margin: 10px;
+}
+
+.parent img {
+    margin: 0;
+}
+
+.child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+}
+
+button {
+    opacity: 0.6;
+    background-color: white;
+}

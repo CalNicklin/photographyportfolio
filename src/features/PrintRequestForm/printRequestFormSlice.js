@@ -24,7 +24,8 @@ export const printRequestFormSlice = createSlice({
     initialState: {
         printSize: '',
         status: 'idle',
-        fulfilled: false
+        fulfilled: false,
+        request: []
     },
     reducers: {
         setPrintSize: (state, action) => {
@@ -32,6 +33,10 @@ export const printRequestFormSlice = createSlice({
         },
         setFulfilled: (state, action) => {
             state.fulfilled = false;
+        },
+        setRequest: (state, action) => {
+            let printArrToAdd = action.payload.prints;
+            printArrToAdd.forEach(print => state.request.push(print))
         }
     },
     extraReducers: {
@@ -48,6 +53,7 @@ export const printRequestFormSlice = createSlice({
 export const selectPrintSize = (state) => state.printRequestForm.printSize;
 export const selectStatus = (state) => state.printRequestForm.status;
 export const selectFulfilled = (state) => state.printRequestForm.fulfilled;
-export const { setPrintSize, setFulfilled } = printRequestFormSlice.actions;
+export const selectRequest = (state) => state.printRequestForm.request;
+export const { setPrintSize, setFulfilled, setRequest } = printRequestFormSlice.actions;
 export default printRequestFormSlice.reducer;
 

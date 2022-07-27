@@ -1,9 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectPrintSize, setPrintSize, selectFulfilled, setFulfilled } from './printRequestFormSlice';
-import { selectPrints } from '../Prints/printsSlice';
+import { selectPrintSize, setPrintSize, setFulfilled, selectStatus, setRequest } from './printRequestFormSlice';
+import { selectPrints, resetPrint } from '../Prints/printsSlice';
 import { submitPrintRequest } from './printRequestFormSlice';
-
+import styles from './Form.module.css';
+import PrintRequestConfirmation from '../PrintRequestConfirmation/PrintRequestConfirmation';
 // This will be a form component that takes some user input data, packages this with the chosen image print array, and POST as an email to me.
 
 export default function PrintRequestForm() {
@@ -11,7 +12,7 @@ export default function PrintRequestForm() {
     const dispatch = useDispatch();
     const prints = useSelector(selectPrints);
     const printSize = useSelector(selectPrintSize);
-    const fulfilled = useSelector(selectFulfilled)
+    const status = useSelector(selectStatus);
     const request = {
         prints: prints,
         printSize: printSize
@@ -22,21 +23,31 @@ export default function PrintRequestForm() {
         dispatch(setPrintSize(e.target.value));
     };
 
+    const select = document.querySelector('#printSize');
+
     const handleClick = (e) => {
         e.preventDefault();
         dispatch(submitPrintRequest(request))
-        dispatch(resetFulfilled());
-    };
+        dispatch(resetPrints());
+        // dispatch(setFulfilled());
+        dispatch(setRequest(request));
+    }
 
-    const resetFulfilled = () => {
-        return async => {
-            setTimeout(() => dispatch(setFulfilled()), 7000)
+    const resetPrintsForm = () => {
+        dispatch(setPrintSize(''));
+        select.selectedIndex = 0;
+        dispatch(resetPrint());
+    }
+
+    const resetPrints = () => {
+        return () => {
+            setTimeout(() => resetPrintsForm(), 7000)
         }
-    } 
+    }
 
     return (
         <div>
-            <div>
+            <div className={styles.form}>
                 <select
                     id='printSize'
                     type="text"
@@ -47,10 +58,10 @@ export default function PrintRequestForm() {
                     <option value='5 X 4'>5 X 4</option>
                     <option value='7 X 5'>7 X 5</option>
                 </select>
-                <button onClick={handleClick}>Submit</button>
+                {(printSize !== '') && <button onClick={handleClick} className={styles.submit}>Submit</button>}
             </div>
-            {fulfilled ? <p>Success</p> : ''}
+            {status === 'pending' ? <p>Sending...</p> : ''}
+            <PrintRequestConfirmation />
         </div>
-
     )
 }

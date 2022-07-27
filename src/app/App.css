@@ -65,3 +65,22 @@ img {
 img:hover {
     cursor: pointer;
 }
+
+button {
+    background-color: darkgray;
+    opacity: 0.5;
+    transition: 0.3s;
+    border: none;
+    color: black;
+    font-family: ibm-plex-mono;
+    cursor: pointer;
+    padding: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+button:hover {
+    opacity: 0.8;
+}

@@ -1,0 +1,13 @@
+.confirmationGallery {
+    width: 100%
+}
+
+.confirmationGallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.img {
+        height: 200px;
+        margin: 10px;
+}

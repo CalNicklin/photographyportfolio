@@ -6,6 +6,8 @@ import Modal from "../Modal/Modal";
 import { openModal, setSrc } from "../Modal/modalSlice";
 import { Link } from "react-router-dom";
 import PrintRequestForm from '../PrintRequestForm/PrintRequestForm';
+import styles from './Prints.module.css';
+import PrintRequestConfirmation from "../PrintRequestConfirmation/PrintRequestConfirmation";
 
 export default function Prints() {
 
@@ -28,19 +30,34 @@ export default function Prints() {
         <div>
             <div>
                 <Modal />
-                {prints.map((print, index) => {
-                    return (
-                        <div key={index}>
-                            <img
-                                src={print}
-                                onClick={handleClick}
-                            />
-                            <button onClick={removeFromPrints} value={print}>Remove this photo</button>
-                        </div>
-                    )
-                })}
+                <div className='gallery'>
+                    {prints.map((print, index) => {
+                        return (
+                            <div
+                                key={index}
+                                className={styles.parent}
+                            >
+                                <img
+                                    src={print}
+                                    onClick={handleClick}
+                                />
+                                <button
+                                    onClick={removeFromPrints}
+                                    value={print}
+                                    className={styles.child}
+                                >
+                                    Remove
+                                </button>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
             <PrintRequestForm />
         </div>
-    ) : <p>You can request prints of your favorite images within each <Link to='/projects'>project</Link> page.</p>
+    ) : 
+    <div>
+        <p>You can request prints of your favorite images within each <Link to='/projects'>project</Link> page.</p>
+        <PrintRequestConfirmation />
+    </div>
 }
