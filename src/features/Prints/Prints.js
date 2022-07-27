@@ -5,7 +5,7 @@ import { selectPrints } from "./printsSlice";
 import Modal from "../Modal/Modal";
 import { openModal, setSrc } from "../Modal/modalSlice";
 import { Link } from "react-router-dom";
-import PrintRequestForm from "../PrintRequestForm/PrintRequestForm";
+import PrintRequestForm from '../PrintRequestForm/PrintRequestForm';
 
 export default function Prints() {
 
