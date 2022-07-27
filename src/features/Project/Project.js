@@ -45,8 +45,8 @@ export default function Project() {
             <div className='gallery'>
                 {project.photos.map((photo, index) => {
                     return (
-                        <div 
-                            className={styles.parent} 
+                        <div
+                            className={styles.parent}
                             key={index}
                         >
                             <img id={`image${index}`}
@@ -54,15 +54,13 @@ export default function Project() {
                                 alt={photo.alt}
                                 onClick={handleClick}
                             />
-                            {/* <button
+                            <button
                                 className={styles.child}
                                 onClick={addToPrints}
                                 value={photo.src}
                             >
-                                Request a print
-                            </button> */}
-                            <FontAwesomeIcon icon={faPlus} className={styles.faPlus} size='xl' onClick={addToPrints}
-                                value={photo.src} />
+                                Add to prints
+                            </button>
                         </div>
                     )
                 })

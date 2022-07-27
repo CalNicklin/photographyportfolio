@@ -44,16 +44,18 @@ p {
     margin: 5px;
 }
 
-.faPlus {
+/* .faPlus {
     position: absolute;
     top: 0;
     right: 0;
     margin: 5px;
     color: white;
     cursor: pointer;
+    opacity: 0.5;
 }
 
 .faPlus:hover {
     opacity: 0.6;
     color: white;
-}
+} */
+
