@@ -1,6 +1,6 @@
 # WorkInProgress - My (C.Nicklin) photography portfolio.
 
-I'm building this project as an exercise in React/Redux. It's a work in progress and I'll up this readme as I finish features. Certain features, such as 'request prints', are being added for me to exercise in e.g. APIs and aren't intended to be used. i.e. I don't plan to sell prints!
+I'm building this project to exercise what I have thus far learned in my Codecademy Full Stack Engineer course, in particular React/Redux. It's a work in progress and I'll up this readme as I finish features. Certain features, such as 'request prints', are being added for me to exercise in e.g. APIs and aren't intended to be used. i.e. I don't plan to sell prints!
 
 Technologies used:
 HTML
@@ -23,7 +23,7 @@ To Do:
   
   -Filter projects by category
   
-  -Link projects to db (currently refs a public json)
+  -Link projects to db (currently refs a public json). Will be studying mysql w/c 1/8/22
   
   -Breadcrumbs
   
