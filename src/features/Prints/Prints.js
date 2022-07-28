@@ -40,6 +40,7 @@ export default function Prints() {
                             >
                                 <img
                                     src={print}
+                                    alt='by c.nicklin'
                                     onClick={handleClick}
                                 />
                                 <button
