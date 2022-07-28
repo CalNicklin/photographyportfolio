@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+// Sends a POST axios request to a http test endpoint
 export const submitPrintRequest = createAsyncThunk(
     'printRequestForm/submitPrintRequest',
     async (request) => {

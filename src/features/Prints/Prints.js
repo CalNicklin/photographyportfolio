@@ -11,6 +11,7 @@ import PrintRequestConfirmation from "../PrintRequestConfirmation/PrintRequestCo
 
 export default function Prints() {
 
+    // Hooks
     const prints = useSelector(selectPrints);
     const dispatch = useDispatch();
 

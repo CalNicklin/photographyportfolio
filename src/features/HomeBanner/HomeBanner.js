@@ -2,11 +2,13 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectProjects } from "../Projects/projectsSlice";
 import { Link } from "react-router-dom";
+
 export default function HomeBanner() {
 
     // Render logic to pick an image and caption at random from all projects in data.js, used on home screen banner
 
     // 1. Convert the object of project objects into an array
+    // Hooks
     const projects = useSelector(selectProjects)
     const projectsArray = Object.values(projects);
 

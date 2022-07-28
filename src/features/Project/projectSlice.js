@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// The only state this manages is the confirmationModal function i.e. image opacity
+
 export const projectSlice = createSlice ({
     name: 'project',
     initialState: {

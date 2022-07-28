@@ -8,6 +8,7 @@ import styles from './Projects.module.css';
 
 export default function Projects() {
 
+    // Hooks
     const projects = useSelector(selectProjects);
     const searchTerm = useSelector(selectQuery);
     // Converts the projects object data into an array so .map is available

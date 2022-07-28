@@ -1,3 +1,4 @@
+/* Parent & child classes allow for overlapping divs */
 .parent {
     position: relative;
     height: 200px;

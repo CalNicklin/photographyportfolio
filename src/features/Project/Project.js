@@ -11,6 +11,7 @@ import { selectConfirmationIsOpen, confirm, reset } from './projectSlice';
 export default function Project() {
 
     // The project text and images displayed are generated via the url params
+    // Hooks
     const projects = useSelector(selectProjects);
     const { title } = useParams();
     const project = projects[title];
@@ -35,12 +36,14 @@ export default function Project() {
 
     };
 
+    // Following lines act as an indicator of the 'add to prints' function being pressed
+    // The state of confirmationModal changes the opacity of the img - it is reset after 1 second
     const resetConfirmation = async () => {
         setTimeout(() => {
           dispatch(reset())    
-        }, 1000)    
+        }, 500)    
       };
-
+ 
     const confirmationModal = useSelector(selectConfirmationIsOpen);
 
     const style = {
@@ -71,6 +74,7 @@ export default function Project() {
                                 src={photo.src}
                                 alt={photo.alt}
                                 onClick={handleClick}
+                                // Resets style after click
                                 style={confirmationModal ? style.confirmed : style.unconfirmed}
                             />
                             <button

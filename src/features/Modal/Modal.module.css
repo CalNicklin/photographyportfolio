@@ -7,6 +7,7 @@
     z-index: 990;
   }
   
+  /* Overlay darkens the 'background' screen */
   .modal .overlay {
     position: absolute;
     left: 0;
@@ -37,7 +38,7 @@
     height: 100%;
     max-width: 90%;
   }
-
+  /* Modal close button */
   .closeButton {
     position: absolute;
     right: 10px;
