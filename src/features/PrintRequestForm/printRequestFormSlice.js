@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+// Sends a POST axios request to a http test endpoint
 export const submitPrintRequest = createAsyncThunk(
     'printRequestForm/submitPrintRequest',
     async (request) => {
@@ -11,7 +12,7 @@ export const submitPrintRequest = createAsyncThunk(
                 url: 'https://webhook.site/7f180eff-e14c-484b-849b-b8af6a8a4716',
                 data: request
             })
-                .then((response) => console.log(response.data))
+                .then((response) => console.log(response.data));
         }
         catch (err) {
             console.log(err)
@@ -24,7 +25,8 @@ export const printRequestFormSlice = createSlice({
     initialState: {
         printSize: '',
         status: 'idle',
-        fulfilled: false
+        fulfilled: false,
+        request: []
     },
     reducers: {
         setPrintSize: (state, action) => {
@@ -32,6 +34,10 @@ export const printRequestFormSlice = createSlice({
         },
         setFulfilled: (state, action) => {
             state.fulfilled = false;
+        },
+        setRequest: (state, action) => {
+            let printArrToAdd = action.payload.prints;
+            printArrToAdd.forEach(print => state.request.push(print))
         }
     },
     extraReducers: {
@@ -48,6 +54,7 @@ export const printRequestFormSlice = createSlice({
 export const selectPrintSize = (state) => state.printRequestForm.printSize;
 export const selectStatus = (state) => state.printRequestForm.status;
 export const selectFulfilled = (state) => state.printRequestForm.fulfilled;
-export const { setPrintSize, setFulfilled } = printRequestFormSlice.actions;
+export const selectRequest = (state) => state.printRequestForm.request;
+export const { setPrintSize, setFulfilled, setRequest } = printRequestFormSlice.actions;
 export default printRequestFormSlice.reducer;
 

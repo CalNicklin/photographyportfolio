@@ -1,0 +1,16 @@
+.confirmationGallery {
+    width: 100%
+}
+
+.confirmationGallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Overrides default img styles */
+.img,
+.img:hover {
+        height: 200px;
+        margin: 10px;
+        cursor: default;
+}

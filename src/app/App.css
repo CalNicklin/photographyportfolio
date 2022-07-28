@@ -23,6 +23,10 @@
 }
 
 /* Nav elements */
+
+.homeBtn {
+    text-decoration: none;
+}
 .nav {
     display: inline-flex;
     align-items: center;
@@ -46,12 +50,20 @@
     color: inherit;
 }
 
+/* Home page banner */
+.banner {
+    display: block;
+    width: 75%;
+    height: auto;
+    margin: 50px auto;
+}
+
 /* Contains project text + images */
 .projectContainer {
     margin: 2rem auto;
 }
 
-/* Responsive image gallery */
+/* Responsive image gallery on project pages*/
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -64,4 +76,25 @@ img {
 
 img:hover {
     cursor: pointer;
+}
+
+/* Global button style */
+button {
+    background-color: white;
+    opacity: 0.9;
+    transition: 0.3s;
+    border: none;
+    color: black;
+    font-family: ibm-plex-mono;
+    cursor: pointer;
+    padding: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: gray;
+    opacity: 0.7;
 }

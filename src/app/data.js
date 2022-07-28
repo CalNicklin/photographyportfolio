@@ -20,7 +20,7 @@ export const PROJECTS = {
         title: 'Further',
         slug: 'further',
         date: '2019',
-        intro: 'The legendary debut FURTHER adventure race held in the Ariege department. Organised by artist/photographer Camille McMillan',
+        intro: 'The legendary debut FURTHER adventure bike race held in the Ariege department of France. Organised by artist/photographer Camille McMillan',
         photos: [
             { src: '/images/further/further3.jpg', alt: 'Ariege horse riding girl' },
             { src: '/images/further/further4.jpg', alt: 'Ariege horse riding girl' },

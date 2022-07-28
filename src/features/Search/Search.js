@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { setQuery } from './searchSlice';
 
 export default function Search() {
+
+  // Hooks
   const searchInputRef = useRef();
   const dispatch = useDispatch();
 

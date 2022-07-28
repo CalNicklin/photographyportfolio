@@ -8,9 +8,10 @@ import styles from './Projects.module.css';
 
 export default function Projects() {
 
+    // Hooks
     const projects = useSelector(selectProjects);
     const searchTerm = useSelector(selectQuery);
-    // Converts the projects object data into an array so .map works
+    // Converts the projects object data into an array so .map is available
     const projectsArray = Object.values(projects);
     // projects are filtered based on a search term matching against title, intro or alt data fields held in data.js
     // the search term and data fields are all .toUpperCase to make case insensitive

@@ -5,12 +5,14 @@ import { closeModal } from './modalSlice';
 // Modal styles overide global app styling.
 import styles from './Modal.module.css';
 
+// Modal is the feature that allows for images to be clicked on and enlarged
 
 export default function Modal() {
 
     const dispatch = useDispatch();
 
     // Accesses state properties of project within data.js via modalSlice and projectsSlice
+    // Hooks
     const isOpen = useSelector(selectIsOpen);
     const source = useSelector(selectSrc);
     const alt = useSelector(selectAlt);

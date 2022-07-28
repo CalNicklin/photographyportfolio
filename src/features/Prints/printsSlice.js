@@ -9,10 +9,13 @@ export const printsSlice = createSlice({
         },
         removePrint: (state, action) => {
             return state.filter(print => print !== action.payload)
+        },
+        resetPrint: (state, action) => {
+            return state = [];
         }
     }
 });
 
 export const selectPrints = (state) => state.prints;
-export const { addPrint, removePrint } = printsSlice.actions;
+export const { addPrint, removePrint, resetPrint } = printsSlice.actions;
 export default printsSlice.reducer;

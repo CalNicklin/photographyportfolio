@@ -7,6 +7,7 @@ import Prints from '../features/Prints/Prints';
 import About from '../features/About/About';
 import Blog from '../features/Blog/Blog';
 import ContactForm from '../features/ContactForm/ContactForm';
+import HomeBanner from '../features/HomeBanner/HomeBanner';
 // import Footer from '../features/Footer/Footer';
 
 import './App.css';
@@ -17,6 +18,7 @@ function App() {
       <Header />
       <main>
         <Routes>
+          <Route path='/' element={<HomeBanner className='banner' />} />
           <Route path='/projects/:title' element={<Project />} />
           <Route path='/projects' element={<Projects />} />
           <Route path='/prints' element={<Prints />} />

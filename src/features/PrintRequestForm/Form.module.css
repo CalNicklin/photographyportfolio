@@ -1,0 +1,31 @@
+.submit {
+    opacity: 1;
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+}
+
+.submit:hover {
+    border: 1px solid black;
+    padding: 0px 20px 0px 20px;
+}
+
+.submit:active {
+    opacity: 0.3;
+}
+
+.form 
+button {
+    display: block;
+    margin: 10px;
+}
+
+.form
+select {
+    display: block;
+    margin: 10px;
+    background-color: white;
+    font-family: ibm-plex-mono;
+    font-size: 1rem;
+    border: none;
+}
