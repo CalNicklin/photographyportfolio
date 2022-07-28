@@ -41,6 +41,7 @@ export default function Prints() {
                                 <img
                                     src={print}
                                     onClick={handleClick}
+                                    alt='by c.nicklin'
                                 />
                                 <button
                                     onClick={removeFromPrints}

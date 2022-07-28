@@ -17,7 +17,7 @@ export default function HomeBanner() {
     const project = projectsArray[randomIndex];
 
     // 3. Now we have access to the randomly selected project properties
-    const { title, slug, date, intro, photos } = project;
+    const { title, slug, date, photos } = project;
 
     // 4. We need to extract some more data from the 'photos' as this currently an array of objects with src and alt properties
     const randomPhotoIndex = Math.floor(Math.random() * photos.length);
@@ -27,7 +27,7 @@ export default function HomeBanner() {
     return (
         <div>
             <Link to={`/projects/${slug}`}>
-            <img src={src} className='banner' />
+            <img src={src} alt={alt} className='banner' />
             </Link>
             <p>{alt}</p>
             <h2>{title}, {date}</h2>
