@@ -50,6 +50,7 @@
     color: inherit;
 }
 
+/* Home page banner */
 .banner {
     display: block;
     width: 75%;
@@ -62,7 +63,7 @@
     margin: 2rem auto;
 }
 
-/* Responsive image gallery */
+/* Responsive image gallery on project pages*/
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -77,6 +78,7 @@ img:hover {
     cursor: pointer;
 }
 
+/* Global button style */
 button {
     background-color: white;
     opacity: 0.9;

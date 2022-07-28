@@ -4,26 +4,31 @@ import { selectProjects } from "../Projects/projectsSlice";
 import { Link } from "react-router-dom";
 export default function HomeBanner() {
 
+    // Render logic to pick an image and caption at random from all projects in data.js, used on home screen banner
+
+    // 1. Convert the object of project objects into an array
     const projects = useSelector(selectProjects)
     const projectsArray = Object.values(projects);
-    const photosArray = projectsArray.map(project => {
-        let photos = project.photos;
-        return photos;
-    });
+
+    // 2. Find a random index to choose a single project object from the projects array
+    const randomIndex = Math.floor(Math.random() * projectsArray.length)
+    const project = projectsArray[randomIndex];
+
+    // 3. Now we have access to the randomly selected project properties
+    const { title, slug, date, intro, photos } = project;
+
+    // 4. We need to extract some more data from the 'photos' as this currently an array of objects with src and alt properties
+    const randomPhotoIndex = Math.floor(Math.random() * photos.length);
+    const { src, alt } = photos[randomPhotoIndex];
     
-    const photosArrayIndex = Math.floor(Math.random() * photosArray.length);
-    const inArrayIndex = Math.floor(Math.random() * (photosArray[photosArrayIndex]).length);
-    const item = Object.values(photosArray[photosArrayIndex][inArrayIndex])
-    const src = item[0];
-    const alt = item[1];
-    const link = projectsArray[photosArrayIndex].slug;
 
     return (
         <div>
-            <Link to={`/projects/${link}`}>
+            <Link to={`/projects/${slug}`}>
             <img src={src} className='banner' />
             </Link>
             <p>{alt}</p>
+            <h2>{title}, {date}</h2>
         </div>    
     )   
 }
