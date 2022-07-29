@@ -25,7 +25,7 @@ export const PROJECTS = {
             { src: '/images/further/further3.jpg', alt: 'Typical Ariege, horse-riding' },
             { src: '/images/further/further4.jpg', alt: 'Typical Ariege, horse-riding' },
             { src: '/images/further/further5.jpg', alt: 'Camille atop Mt. Fourcat' },
-            { src: '/images/further/further8.jpg', alt: 'Well-known fixed-gear rider, tattooed Chas Christenson' },
+            { src: '/images/further/further8.jpg', alt: 'Chas Christenson, bicycle messenger' },
             { src: '/images/further/further9.jpg', alt: 'Mayflys' },
             { src: '/images/further/further10.jpg', alt: 'Camille and Mayflys' },
             { src: '/images/further/further11.jpg', alt: 'Angus Young collapsed at the checkpoint, Fourcat' },
