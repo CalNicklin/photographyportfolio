@@ -24,7 +24,7 @@ h1 {
 p {
     font-family: ibm-plex-mono;
     font-size: 0.8rem;
-    color: rgb(rgb(64, 64, 64))
+    color: rgb(64, 64, 64);
 }
 
 .parent {

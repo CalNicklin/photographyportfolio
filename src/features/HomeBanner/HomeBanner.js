@@ -25,9 +25,9 @@ export default function HomeBanner() {
     
 
     return (
-        <div>
+        <div className='banner'>
             <Link to={`/projects/${slug}`}>
-            <img src={src} alt={alt} className='banner' />
+            <img src={src} alt={alt} />
             </Link>
             <p>{alt}</p>
             <h2>{title}, {date}</h2>

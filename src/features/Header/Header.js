@@ -15,7 +15,7 @@ export default function Header() {
                 <NavLink to='/about'>About</NavLink>
                 <NavLink to='/blog'>Blog</NavLink>
                 <NavLink to='/contact'>Contact</NavLink>
-                <NavLink to='/prints'>
+                <NavLink to='/prints' id='prints'>
                     {/* use of ternary operator works because prints.length is an array with initial state of 0, which evaluates to falsy. */}
                     {prints ? `Prints(${prints})` : 'Prints'}
                 </NavLink>
