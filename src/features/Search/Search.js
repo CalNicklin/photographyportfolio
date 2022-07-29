@@ -15,7 +15,7 @@ export default function Search() {
   };
 
   return (
-    <form>
+    <form form onSubmit={e => { e.preventDefault()}}>
       <input type='text' ref={searchInputRef} onChange={onChangeHandler} placeholder='Search by keyword' />
     </form>
   )
