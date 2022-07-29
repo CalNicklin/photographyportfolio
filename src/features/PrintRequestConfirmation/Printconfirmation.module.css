@@ -10,7 +10,8 @@
 /* Overrides default img styles */
 .img,
 .img:hover {
-        height: 200px;
+        max-height: 200px;
+        width: auto;
         margin: 10px;
         cursor: default;
 }

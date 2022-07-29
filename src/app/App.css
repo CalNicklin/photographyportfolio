@@ -5,6 +5,13 @@
     padding: 5px 20px 0px 20px;
 }
 
+@media only screen and (max-width: 540px) {
+    main {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
 /* Header bar */
 .header {
     display: inline-flex;
@@ -92,11 +99,15 @@
         text-transform: uppercase;
         display: inline-flex;
     }
+
+    main {
+        margin: auto;
+    }
 }
 
 @media only screen and (max-width: 390px) {
     .header {
-        margin-bottom: 0px;
+        margin-bottom: 20px;
     }
 
     .nav a {
@@ -144,6 +155,8 @@
 .gallery {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    
 }
 
 img {
@@ -175,3 +188,4 @@ button:hover {
     background-color: gray;
     opacity: 0.7;
 }
+
