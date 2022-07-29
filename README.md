@@ -19,6 +19,9 @@ To Do:
   -Contact Page
   -Blog
   
+  -Disable Modal on mobile via react-responsive conditional rendering
+  -Disable 'enter' function on search bar
+  
   -A11y 
   
   -Filter projects by category
